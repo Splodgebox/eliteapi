@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id('com.github.johnrengelman.shadow') version '8.1.1'
+}
+
+group = 'net.splodgebox.eliteapi'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'SpigotMC'
+        url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
+    }
+    maven {
+        name = 'CodeMC'
+        url = uri('https://repo.codemc.io/repository/maven-public/')
+    }
+    maven {
+        url = uri("https://libraries.minecraft.net/")
+    }
+}
+
+dependencies {
+    annotationProcessor('org.projectlombok:lombok:1.18.36')
+    compileOnly('org.projectlombok:lombok:1.18.36')
+    compileOnly('org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT')
+    compileOnly(group: 'com.mojang', name: 'authlib', version: '3.13.56')
+
+    implementation('de.tr7zw:item-nbt-api-plugin:2.14.1')
+    implementation("com.github.cryptomorin:XSeries:12.1.0")
+}
+
+shadowJar {
+    relocate('de.tr7zw.changeme.nbtapi', 'net.splodgebox.eliteapi.nbt')
+    relocate('com.cryptomorin.xseries', 'net.splodgebox.eliteapi.xseries')
+
+    archiveFileName.set("${rootProject.name}.jar")
+}

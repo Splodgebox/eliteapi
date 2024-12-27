@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.NonNull;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.regex.Matcher;
@@ -53,7 +54,6 @@ public class Chat {
         return color(message);
     }
 
-
     /**
      * Sends a colorized message to the specified player. If the message contains multiple lines,
      * each line is colorized and sent individually.
@@ -85,6 +85,39 @@ public class Chat {
     public static void send(Player player, String message, String... placeholders) {
         player.sendMessage(color(replace(message, placeholders)));
     }
+
+    /**
+     * Sends a colorized message to the command sender. If the message contains multiple lines,
+     * each line is colorized and sent individually.
+     *
+     * @param sender the sender to whom the message will be sent
+     * @param message the message to be sent; can contain color codes and multiple lines
+     * @throws IllegalArgumentException if the player is null
+     */
+    public static void send(CommandSender sender, String message) {
+        if (message.contains("\n")) {
+            for (String line : message.split("\n")) {
+                sender.sendMessage(color(line));
+            }
+            return;
+        }
+
+        sender.sendMessage(color(message));
+    }
+
+    /**
+     * Sends a formatted and colorized message to the command sender.
+     *
+     * @param sender the sender to whom the message will be sent; must not be null
+     * @param message the message to be sent; supports placeholders and color codes
+     * @param placeholders an optional array of placeholder-replacement pairs to format the message
+     *                     before sending; must be provided in key-value pairs
+     * @throws IllegalArgumentException if the player is null
+     */
+    public static void send(CommandSender sender, String message, String... placeholders) {
+        sender.sendMessage(color(replace(message, placeholders)));
+    }
+
 
     /**
      * Logs a colorized message to the console.

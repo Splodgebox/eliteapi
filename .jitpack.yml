@@ -1,14 +1,7 @@
 jdk:
   - openjdk17
 
-script:
-  - chmod +x gradlew
-  - ./gradlew clean shadowJar
-
-# Not sure if it's script or install, adding both for now
-# TODO: Remove this if it's not needed
 install:
-  - chmod +x gradlew
   - ./gradlew clean shadowJar
 
 artifacts:

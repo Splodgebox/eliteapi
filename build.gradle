@@ -23,7 +23,13 @@ repositories {
         url = uri('https://repo.codemc.io/repository/maven-public/')
     }
     maven {
-        url = uri("https://libraries.minecraft.net/")
+        url = uri('https://libraries.minecraft.net/')
+    }
+    maven {
+        url = uri('https://jitpack.io')
+    }
+    maven {
+        url = uri('https://repo.aikar.co/content/groups/aikar/')
     }
 }
 
@@ -34,12 +40,16 @@ dependencies {
     compileOnly(group: 'com.mojang', name: 'authlib', version: '3.13.56')
 
     implementation('de.tr7zw:item-nbt-api-plugin:2.14.1')
-    implementation("com.github.cryptomorin:XSeries:12.1.0")
+    implementation('com.github.cryptomorin:XSeries:12.1.0')
+
+    implementation 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
 
 shadowJar {
     relocate('de.tr7zw.changeme.nbtapi', 'net.splodgebox.eliteapi.nbt')
     relocate('com.cryptomorin.xseries', 'net.splodgebox.eliteapi.xseries')
+    relocate('co.aikar.commands', 'net.splodgebox.eliteapi.acf')
+    relocate('co.aikar.locales', 'net.splodgebox.eliteapi.locales')
 
     archiveFileName.set("${rootProject.name}.jar")
 }
@@ -53,7 +63,7 @@ publishing {
 }
 
 wrapper {
-    gradleVersion = "8.10"
+    gradleVersion = '8.10'
     distributionType = Wrapper.DistributionType.ALL
 }
 

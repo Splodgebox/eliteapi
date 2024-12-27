@@ -20,39 +20,9 @@ import java.util.regex.Pattern;
  * based on the Minecraft version.
  * </p>
  *
- * <p><b>Note:</b> This class uses Lombok annotations for builder pattern and constructor generation.
- * Ensure that Lombok is properly set up in your project.</p>
- *
  * @author splodgebox
  */
-@Builder
-@AllArgsConstructor
 public class Chat {
-
-    /**
-     * The message content to be sent or processed.
-     */
-    @NonNull
-    private String message;
-
-    /**
-     * Sends the colorized message to the specified player.
-     *
-     * @param player the player to whom the message will be sent
-     * @throws IllegalArgumentException if the player is null
-     */
-    public void sendMessage(@NonNull Player player) {
-        player.sendMessage(color(message));
-    }
-
-    /**
-     * Retrieves the colorized version of the message.
-     *
-     * @return the colorized message string, or null if the original message is null
-     */
-    public String getMessage() {
-        return color(message);
-    }
 
     /**
      * Sends a colorized message to the specified player. If the message contains multiple lines,

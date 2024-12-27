@@ -1,5 +1,6 @@
 jdk:
   - openjdk17
 
-install:
+script:
+  - chmod +x gradlew
   - ./gradlew clean shadowJar

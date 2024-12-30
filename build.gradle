@@ -51,14 +51,13 @@ tasks.shadowJar {
     relocate('co.aikar.commands', 'net.splodgebox.eliteapi.acf')
     relocate('co.aikar.locales', 'net.splodgebox.eliteapi.locales')
 
-    archiveFileName.set("${rootProject.name}.jar")
+    archiveFileName.set("${rootProject.name}-1.0.0.jar")
     archiveClassifier.set("")
 }
 
 publishing {
     publications {
         shadow(MavenPublication) {
-            from components.java
             artifact tasks.shadowJar
         }
     }

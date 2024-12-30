@@ -1,7 +1,7 @@
 plugins {
     id 'java'
-    id('com.github.johnrengelman.shadow') version '8.1.1'
-    id('maven-publish')
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'maven-publish'
 }
 
 group = 'net.splodgebox.eliteapi'
@@ -34,30 +34,32 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor('org.projectlombok:lombok:1.18.36')
-    compileOnly('org.projectlombok:lombok:1.18.36')
-    compileOnly('org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT')
-    compileOnly(group: 'com.mojang', name: 'authlib', version: '3.13.56')
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    compileOnly 'org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT'
+    compileOnly group: 'com.mojang', name: 'authlib', version: '3.13.56'
 
-    implementation('de.tr7zw:item-nbt-api-plugin:2.14.1')
-    implementation('com.github.cryptomorin:XSeries:12.1.0')
+    implementation 'de.tr7zw:item-nbt-api-plugin:2.14.1'
+    implementation 'com.github.cryptomorin:XSeries:12.1.0'
 
     implementation 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
 
-shadowJar {
+tasks.shadowJar {
     relocate('de.tr7zw.changeme.nbtapi', 'net.splodgebox.eliteapi.nbt')
     relocate('com.cryptomorin.xseries', 'net.splodgebox.eliteapi.xseries')
     relocate('co.aikar.commands', 'net.splodgebox.eliteapi.acf')
     relocate('co.aikar.locales', 'net.splodgebox.eliteapi.locales')
 
     archiveFileName.set("${rootProject.name}.jar")
+    archiveClassifier.set("")
 }
 
 publishing {
     publications {
-        mavenJava(MavenPublication) {
+        shadow(MavenPublication) {
             from components.java
+            artifact tasks.shadowJar
         }
     }
 }
@@ -68,13 +70,5 @@ wrapper {
 }
 
 assemble {
-    dependsOn shadowJar
-}
-
-artifacts {
-    archives shadowJar
-}
-
-compileJava {
     dependsOn shadowJar
 }

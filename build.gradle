@@ -45,24 +45,23 @@ dependencies {
     implementation 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
 
-tasks.shadowJar {
+shadowJar {
     relocate('de.tr7zw.changeme.nbtapi', 'net.splodgebox.eliteapi.nbt')
     relocate('com.cryptomorin.xseries', 'net.splodgebox.eliteapi.xseries')
     relocate('co.aikar.commands', 'net.splodgebox.eliteapi.acf')
     relocate('co.aikar.locales', 'net.splodgebox.eliteapi.locales')
 
-    archiveFileName.set("${rootProject.name}-1.0.0.jar")
+    archiveFileName.set("${rootProject.name}.jar")
     archiveClassifier.set("")
 }
 
 publishing {
     publications {
-        shadow(MavenPublication) {
-            artifact tasks.shadowJar
+        mavenJava(MavenPublication) {
+            artifact shadowJar
         }
     }
 }
-
 wrapper {
     gradleVersion = '8.10'
     distributionType = Wrapper.DistributionType.ALL

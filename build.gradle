@@ -67,10 +67,14 @@ wrapper {
     distributionType = Wrapper.DistributionType.ALL
 }
 
-tasks.assemble {
+assemble {
     dependsOn shadowJar
 }
 
 artifacts {
     archives shadowJar
+}
+
+compileJava {
+    dependsOn shadowJar
 }

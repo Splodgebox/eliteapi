@@ -1,7 +1,7 @@
 plugins {
-    id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
-    id 'maven-publish'
+    id("java")
+    id("com.gradleup.shadow") version "9.1.0"
+    id("maven-publish")
 }
 
 group = 'net.splodgebox.eliteapi'
@@ -19,8 +19,8 @@ repositories {
         url = uri('https://hub.spigotmc.org/nexus/content/repositories/snapshots/')
     }
     maven {
-        name = 'CodeMC'
-        url = uri('https://repo.codemc.io/repository/maven-public/')
+        name = "CodeMC"
+        url = uri("https://repo.codemc.io/repository/maven-public/")
     }
     maven {
         url = uri('https://libraries.minecraft.net/')
@@ -34,13 +34,13 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor 'org.projectlombok:lombok:1.18.36'
-    compileOnly 'org.projectlombok:lombok:1.18.36'
-    compileOnly 'org.spigotmc:spigot-api:1.21.4-R0.1-SNAPSHOT'
+    annotationProcessor 'org.projectlombok:lombok:1.18.40'
+    compileOnly 'org.projectlombok:lombok:1.18.40'
+    compileOnly 'org.spigotmc:spigot-api:1.21.8-R0.1-SNAPSHOT'
     compileOnly group: 'com.mojang', name: 'authlib', version: '3.13.56'
 
-    implementation 'de.tr7zw:item-nbt-api-plugin:2.14.1'
-    implementation 'com.github.cryptomorin:XSeries:12.1.0'
+    implementation 'de.tr7zw:item-nbt-api-plugin:2.15.2'
+    implementation 'com.github.cryptomorin:XSeries:13.3.3'
 
     implementation 'co.aikar:acf-paper:0.5.1-SNAPSHOT'
 }
@@ -62,8 +62,9 @@ publishing {
         }
     }
 }
+
 wrapper {
-    gradleVersion = '8.10'
+    gradleVersion = '9'
     distributionType = Wrapper.DistributionType.ALL
 }
 

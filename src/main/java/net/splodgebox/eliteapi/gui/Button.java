@@ -1,8 +1,8 @@
-package net.splodgebox.eliteapi.gui.menu;
+package net.splodgebox.eliteapi.gui;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.splodgebox.eliteapi.gui.menu.actions.ClickAction;
+import net.splodgebox.eliteapi.gui.actions.ClickAction;
 import org.bukkit.inventory.ItemStack;
 
 @Getter

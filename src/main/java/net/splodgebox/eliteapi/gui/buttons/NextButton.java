@@ -1,7 +1,7 @@
-package net.splodgebox.eliteapi.gui.menu.buttons;
+package net.splodgebox.eliteapi.gui.buttons;
 
-import net.splodgebox.eliteapi.gui.menu.Button;
-import net.splodgebox.eliteapi.gui.menu.types.PagedMenu;
+import net.splodgebox.eliteapi.gui.Button;
+import net.splodgebox.eliteapi.gui.types.PagedMenu;
 import net.splodgebox.eliteapi.item.ItemBuilder;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;

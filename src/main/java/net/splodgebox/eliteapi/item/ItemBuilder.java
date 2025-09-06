@@ -2,7 +2,6 @@ package net.splodgebox.eliteapi.item;
 
 import com.cryptomorin.xseries.XMaterial;
 import de.tr7zw.nbtapi.NBT;
-import de.tr7zw.nbtapi.iface.ReadWriteItemNBT;
 import net.splodgebox.eliteapi.chat.Chat;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -12,7 +11,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-import java.util.function.Consumer;
 
 public class ItemBuilder {
 
@@ -132,6 +130,11 @@ public class ItemBuilder {
         if (itemStack.getItemMeta() == null) {
             return new ArrayList<>();
         }
+
+        if (itemStack.getItemMeta().getLore() == null) {
+            return new ArrayList<>();
+        }
+
         return itemStack.getItemMeta().getLore();
     }
 }

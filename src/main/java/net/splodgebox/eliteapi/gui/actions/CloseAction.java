@@ -1,4 +1,4 @@
-package net.splodgebox.eliteapi.gui.menu.actions;
+package net.splodgebox.eliteapi.gui.actions;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryCloseEvent;

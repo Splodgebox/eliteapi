@@ -1,4 +1,4 @@
-package net.splodgebox.eliteapi.gui.menu;
+package net.splodgebox.eliteapi.gui;
 
 import com.google.common.collect.Sets;
 

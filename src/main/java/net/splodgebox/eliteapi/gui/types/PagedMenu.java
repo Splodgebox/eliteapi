@@ -1,13 +1,13 @@
-package net.splodgebox.eliteapi.gui.menu.types;
+package net.splodgebox.eliteapi.gui.types;
 
 import lombok.Getter;
 import lombok.Setter;
-import net.splodgebox.eliteapi.gui.menu.Button;
-import net.splodgebox.eliteapi.gui.menu.Menu;
-import net.splodgebox.eliteapi.gui.menu.MenuPartition;
-import net.splodgebox.eliteapi.gui.menu.Template;
-import net.splodgebox.eliteapi.gui.menu.buttons.NextButton;
-import net.splodgebox.eliteapi.gui.menu.buttons.PreviousButton;
+import net.splodgebox.eliteapi.gui.Button;
+import net.splodgebox.eliteapi.gui.Menu;
+import net.splodgebox.eliteapi.gui.MenuPartition;
+import net.splodgebox.eliteapi.gui.Template;
+import net.splodgebox.eliteapi.gui.buttons.NextButton;
+import net.splodgebox.eliteapi.gui.buttons.PreviousButton;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;

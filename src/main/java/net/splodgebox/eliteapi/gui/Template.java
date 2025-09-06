@@ -1,7 +1,7 @@
-package net.splodgebox.eliteapi.gui.menu;
+package net.splodgebox.eliteapi.gui;
 
 import lombok.Getter;
-import net.splodgebox.eliteapi.gui.menu.types.PagedMenu;
+import net.splodgebox.eliteapi.gui.types.PagedMenu;
 
 public abstract class Template {
 

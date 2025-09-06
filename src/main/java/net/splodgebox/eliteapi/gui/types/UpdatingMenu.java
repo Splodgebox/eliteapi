@@ -1,7 +1,7 @@
-package net.splodgebox.eliteapi.gui.menu.types;
+package net.splodgebox.eliteapi.gui.types;
 
 import lombok.Getter;
-import net.splodgebox.eliteapi.gui.menu.Menu;
+import net.splodgebox.eliteapi.gui.Menu;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 

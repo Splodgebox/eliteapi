@@ -1,10 +1,10 @@
-package net.splodgebox.eliteapi.gui.menu;
+package net.splodgebox.eliteapi.gui;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
 import lombok.Setter;
-import net.splodgebox.eliteapi.gui.menu.actions.ClickAction;
-import net.splodgebox.eliteapi.gui.menu.actions.CloseAction;
+import net.splodgebox.eliteapi.gui.actions.ClickAction;
+import net.splodgebox.eliteapi.gui.actions.CloseAction;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
